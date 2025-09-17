@@ -15,9 +15,9 @@ import lombok.NoArgsConstructor;
 public class ciudadano {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Long idCiudadano;
+    private Integer idCiudadano;
 
-    String nombreCiudadano;
-    String correoElectronico;
-    String identificacion;
+    private String nombreCiudadano;
+    private String correoElectronico;
+    private String identificacion;
 }

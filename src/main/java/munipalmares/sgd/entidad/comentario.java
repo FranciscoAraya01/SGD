@@ -19,9 +19,9 @@ import java.sql.Date;
 public class comentario {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Long idComentario;
+    private Integer idComentario;
 
-    String descripcion;
-    Date fechaComentario;
-    Long idUsuarioMunicipal;
+    private String descripcion;
+    private Date fechaComentario;
+    private Integer idUsuarioMunicipal;
 }

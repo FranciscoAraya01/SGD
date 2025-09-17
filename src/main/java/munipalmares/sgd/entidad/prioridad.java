@@ -15,7 +15,7 @@ import lombok.NoArgsConstructor;
 public class prioridad {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Long idPrioridad;
+    private Integer idPrioridad;
 
-    String descripcion;
+    private String descripcion;
 }

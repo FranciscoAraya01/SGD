@@ -1,14 +1,11 @@
 package munipalmares.sgd.entidad;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.sql.Date;
+import java.time.LocalDateTime;
 
 @NoArgsConstructor
 @AllArgsConstructor
@@ -17,10 +14,18 @@ import java.sql.Date;
 public class denuncia {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Long idDenuncia;
+    private Integer idDenuncia;
 
-    String titulo;
-    String descripcion;
-    Date fechaCreacion;
-    Long idCiudadano;
+    private LocalDateTime fechahora;
+    private String direccion;
+    private String gis;
+    private String descripcion;
+    private String categoria;
+    @Lob
+    private byte[] evidenciaFotografica;
+
+    private Boolean anonimato;
+    @ManyToOne
+    @JoinColumn(name = "idCiudadano")
+    private ciudadano ciudadano;
 }
